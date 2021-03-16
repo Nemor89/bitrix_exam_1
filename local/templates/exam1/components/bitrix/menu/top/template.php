@@ -19,7 +19,7 @@ foreach($arResult as $arItem):?>
 	<?if ($arItem["IS_PARENT"]):?>
 
 		<?if ($arItem["DEPTH_LEVEL"] == 1):?>
-			<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
+			<li><a href="<?=$arItem["LINK"]?>" <?if($arItem["PARAMS"]["COLOR"]):?>class="<?=$arItem["PARAMS"]["COLOR"]?>"<?endif?>><?=$arItem["TEXT"]?></a>
 				<ul>
 					<?if ($arItem["PARAMS"]["TEXT"]):?>
 					<div class="menu-text"><?=$arItem["PARAMS"]["TEXT"]?></div>
