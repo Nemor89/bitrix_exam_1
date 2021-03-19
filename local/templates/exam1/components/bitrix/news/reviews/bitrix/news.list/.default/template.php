@@ -25,9 +25,10 @@ $img = SITE_TEMPLATE_PATH . "/img/no_photo.jpg";
 	?>
 
 	<?
-	if (isset($arItem["PREVIEW_PICTURE"]["SRC"]))
+	if ($arItem["DETAIL_PICTURE"]["ID"])
 	{
-		$img = $arItem["PREVIEW_PICTURE"]["SRC"];
+		$resizeImg = CFile::ResizeImageGet($arItem["DETAIL_PICTURE"]["ID"], array('width'=>68, 'height'=>50), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+		$img = $resizeImg["src"];
 	}
 	?>
 			<div class="review-block" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
